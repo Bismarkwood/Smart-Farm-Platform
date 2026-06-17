@@ -44,7 +44,7 @@ export default function BatchDetailDrawer({ isOpen, onClose, batchId }: BatchDet
       <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" onClick={onClose} />
 
       {/* Drawer */}
-      <div className="relative ml-auto h-full w-full max-w-[540px] bg-white border-l border-gray-200 flex flex-col animate-slide-in-right">
+      <div className="relative ml-auto h-full w-full max-w-[460px] bg-white border-l border-gray-200 flex flex-col animate-slide-in-right">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 shrink-0">
           <div className="flex items-center gap-3">

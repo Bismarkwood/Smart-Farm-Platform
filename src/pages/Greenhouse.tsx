@@ -52,11 +52,11 @@ export default function Greenhouse() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-[28px] font-bold text-gray-900">Greenhouse Production</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Greenhouse Production</h1>
           <p className="text-sm text-gray-500 mt-1">
             Track crop cycles, planting schedules, expected yields and available vegetable stock.
           </p>
@@ -87,7 +87,7 @@ export default function Greenhouse() {
 
       {/* Main Content Card */}
       <div className="bg-white rounded-2xl border border-gray-200">
-        <div className="p-5 border-b border-gray-100">
+        <div className="p-4 border-b border-gray-100">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
             <div>
               <h2 className="text-base font-semibold text-gray-900">Crop Overview</h2>
@@ -106,7 +106,7 @@ export default function Greenhouse() {
           </div>
         </div>
 
-        <div className="px-5 border-b border-gray-100">
+        <div className="px-4 border-b border-gray-100">
           <nav className="flex gap-1">
             {tabs.map(tab => (
               <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={`px-4 py-3 text-sm font-medium rounded-t-lg transition-colors relative ${activeTab === tab.id ? 'text-green-700 bg-green-50/50' : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'}`}>
@@ -117,22 +117,22 @@ export default function Greenhouse() {
           </nav>
         </div>
 
-        <div className="p-5">
+        <div className="p-4">
           {activeTab === 'crops' && (
             <div>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="bg-[#F9FAFB]">
-                      <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Crop</th>
-                      <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Greenhouse</th>
-                      <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Planted</th>
-                      <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Harvest Date</th>
-                      <th className="text-right py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Expected (kg)</th>
-                      <th className="text-right py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Actual (kg)</th>
-                      <th className="text-right py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Available (kg)</th>
-                      <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Status</th>
-                      <th className="text-right py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Actions</th>
+                      <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Crop</th>
+                      <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Greenhouse</th>
+                      <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Planted</th>
+                      <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Harvest Date</th>
+                      <th className="text-right py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Expected (kg)</th>
+                      <th className="text-right py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Actual (kg)</th>
+                      <th className="text-right py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Available (kg)</th>
+                      <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Status</th>
+                      <th className="text-right py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -141,8 +141,8 @@ export default function Greenhouse() {
                       const yieldPercent = crop.actualYieldKg ? ((crop.actualYieldKg / crop.expectedYieldKg) * 100).toFixed(0) : null
 
                       return (
-                        <tr key={crop.id} className="border-b border-gray-100 hover:bg-green-50/30 transition-colors h-[68px]">
-                          <td className="py-3 px-4">
+                        <tr key={crop.id} className="border-b border-gray-100 hover:bg-green-50/30 transition-colors">
+                          <td className="py-3 px-3">
                             <div>
                               <button onClick={() => handleViewCrop(crop.id)} className="font-semibold text-gray-900 hover:text-green-700 transition-colors text-left">
                                 {crop.cropType}
@@ -150,16 +150,16 @@ export default function Greenhouse() {
                               <p className="text-xs text-gray-400">{crop.variety}</p>
                             </div>
                           </td>
-                          <td className="py-3 px-4">
+                          <td className="py-3 px-3">
                             <div>
                               <p className="font-medium text-gray-900">{gh?.name}</p>
                               <p className="text-xs text-gray-400">{gh?.sizeSqm} sqm</p>
                             </div>
                           </td>
-                          <td className="py-3 px-4 text-gray-700">{crop.plantingDate}</td>
-                          <td className="py-3 px-4 text-gray-700">{crop.actualHarvestDate || crop.expectedHarvestDate}</td>
-                          <td className="py-3 px-4 text-right text-gray-700">{crop.expectedYieldKg}</td>
-                          <td className="py-3 px-4 text-right">
+                          <td className="py-3 px-3 text-gray-700">{crop.plantingDate}</td>
+                          <td className="py-3 px-3 text-gray-700">{crop.actualHarvestDate || crop.expectedHarvestDate}</td>
+                          <td className="py-3 px-3 text-right text-gray-700">{crop.expectedYieldKg}</td>
+                          <td className="py-3 px-3 text-right">
                             {crop.actualYieldKg ? (
                               <div>
                                 <p className="font-medium text-gray-900">{crop.actualYieldKg}</p>
@@ -167,17 +167,17 @@ export default function Greenhouse() {
                               </div>
                             ) : <span className="text-gray-400">—</span>}
                           </td>
-                          <td className="py-3 px-4 text-right">
+                          <td className="py-3 px-3 text-right">
                             <span className={`font-bold ${crop.availableStockKg > 0 ? 'text-gray-900' : 'text-gray-400'}`}>
                               {crop.availableStockKg || '—'}
                             </span>
                           </td>
-                          <td className="py-3 px-4">
+                          <td className="py-3 px-3">
                             <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium capitalize ${cropStatusStyles[crop.status] || 'bg-gray-100 text-gray-700'}`}>
                               {crop.status}
                             </span>
                           </td>
-                          <td className="py-3 px-4 text-right">
+                          <td className="py-3 px-3 text-right">
                             <div className="flex items-center justify-end gap-1">
                               <button onClick={() => handleViewCrop(crop.id)} className="px-2.5 py-1 text-xs font-medium text-green-700 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
                                 View
@@ -202,7 +202,7 @@ export default function Greenhouse() {
               {greenhouses.map(gh => {
                 const crop = cropBatches.find(c => c.id === gh.currentCropId)
                 return (
-                  <div key={gh.id} className="bg-white border border-gray-200 rounded-xl p-5 hover:border-green-200 transition-colors">
+                  <div key={gh.id} className="bg-white border border-gray-200 rounded-xl p-4 hover:border-green-200 transition-colors">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-2">
                         <span className={`w-2 h-2 rounded-full ${gh.status === 'active' ? 'bg-green-500' : 'bg-gray-400'}`} />

@@ -53,7 +53,7 @@ export default function Dashboard() {
   const pendingOrders = orders.filter(o => o.status === 'pending' || o.status === 'confirmed')
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       {/* Page Header */}
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Dashboard Overview</h1>
@@ -93,7 +93,7 @@ export default function Dashboard() {
       {/* Charts Row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Revenue Chart */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5">
+        <div className="bg-white rounded-xl border border-gray-200 p-4">
           <h3 className="text-sm font-semibold text-gray-900 mb-4">Monthly Revenue (GH₵)</h3>
           <ResponsiveContainer width="100%" height={250}>
             <BarChart data={revenueData}>
@@ -107,7 +107,7 @@ export default function Dashboard() {
         </div>
 
         {/* Production Chart */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5">
+        <div className="bg-white rounded-xl border border-gray-200 p-4">
           <h3 className="text-sm font-semibold text-gray-900 mb-4">Production Output (kg)</h3>
           <ResponsiveContainer width="100%" height={250}>
             <LineChart data={productionData}>
@@ -125,7 +125,7 @@ export default function Dashboard() {
       {/* Bottom Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Fish Stock Distribution */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5">
+        <div className="bg-white rounded-xl border border-gray-200 p-4">
           <h3 className="text-sm font-semibold text-gray-900 mb-4">Fish Stock Distribution</h3>
           <ResponsiveContainer width="100%" height={180}>
             <PieChart>
@@ -147,7 +147,7 @@ export default function Dashboard() {
         </div>
 
         {/* Upcoming Harvests */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5">
+        <div className="bg-white rounded-xl border border-gray-200 p-4">
           <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
             <Calendar01Icon className="w-4 h-4" />
             Upcoming Harvests
@@ -176,7 +176,7 @@ export default function Dashboard() {
         </div>
 
         {/* Alerts */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5">
+        <div className="bg-white rounded-xl border border-gray-200 p-4">
           <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
             <Activity01Icon className="w-4 h-4" />
             Alerts & Notifications

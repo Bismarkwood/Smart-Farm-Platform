@@ -50,7 +50,7 @@ const customerActivity = [
 
 export default function Reports() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Management Reports</h1>
@@ -64,7 +64,7 @@ export default function Reports() {
 
       {/* Quick Summary Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="bg-white rounded-xl border border-gray-200 p-5">
+        <div className="bg-white rounded-xl border border-gray-200 p-4">
           <div className="flex items-center gap-3 mb-2">
             <div className="p-2 bg-blue-50 rounded-lg">
               <FishFoodIcon className="w-4 h-4 text-blue-600" />
@@ -74,7 +74,7 @@ export default function Reports() {
           <p className="text-xl font-bold text-gray-900">4,200 kg</p>
           <p className="text-xs text-green-600 mt-1">↑ 8% from last month</p>
         </div>
-        <div className="bg-white rounded-xl border border-gray-200 p-5">
+        <div className="bg-white rounded-xl border border-gray-200 p-4">
           <div className="flex items-center gap-3 mb-2">
             <div className="p-2 bg-green-50 rounded-lg">
               <Leaf01Icon className="w-4 h-4 text-green-600" />
@@ -84,7 +84,7 @@ export default function Reports() {
           <p className="text-xl font-bold text-gray-900">620 kg</p>
           <p className="text-xs text-green-600 mt-1">↑ 13% from last month</p>
         </div>
-        <div className="bg-white rounded-xl border border-gray-200 p-5">
+        <div className="bg-white rounded-xl border border-gray-200 p-4">
           <div className="flex items-center gap-3 mb-2">
             <div className="p-2 bg-amber-50 rounded-lg">
               <ShoppingCart01Icon className="w-4 h-4 text-amber-600" />
@@ -99,7 +99,7 @@ export default function Reports() {
       {/* Charts Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Sales by Product */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5">
+        <div className="bg-white rounded-xl border border-gray-200 p-4">
           <h3 className="text-sm font-semibold text-gray-900 mb-4">Monthly Sales by Product (GH₵)</h3>
           <ResponsiveContainer width="100%" height={280}>
             <BarChart data={monthlySales}>
@@ -116,7 +116,7 @@ export default function Reports() {
         </div>
 
         {/* Product Mix */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5">
+        <div className="bg-white rounded-xl border border-gray-200 p-4">
           <h3 className="text-sm font-semibold text-gray-900 mb-4">Revenue by Product Category</h3>
           <ResponsiveContainer width="100%" height={280}>
             <PieChart>
@@ -138,7 +138,7 @@ export default function Reports() {
         </div>
 
         {/* Mortality Trend */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5">
+        <div className="bg-white rounded-xl border border-gray-200 p-4">
           <h3 className="text-sm font-semibold text-gray-900 mb-4">Fish Mortality Rate (%)</h3>
           <ResponsiveContainer width="100%" height={280}>
             <LineChart data={mortalityTrend}>
@@ -152,7 +152,7 @@ export default function Reports() {
         </div>
 
         {/* Customer Activity */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5">
+        <div className="bg-white rounded-xl border border-gray-200 p-4">
           <h3 className="text-sm font-semibold text-gray-900 mb-4">Customer Activity</h3>
           <ResponsiveContainer width="100%" height={280}>
             <BarChart data={customerActivity}>

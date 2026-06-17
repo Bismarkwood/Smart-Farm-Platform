@@ -47,11 +47,11 @@ function KpiCard({ title, value, subtext, trend, trendPositive, icon: Icon, colo
 }) {
   const colors = colorMap[color]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-2xl border border-gray-200 p-4 shadow-sm hover:shadow-md transition-shadow">
       <div className="flex items-start justify-between">
         <div className="flex-1">
           <p className="text-sm text-gray-500 font-medium">{title}</p>
-          <p className="text-[28px] font-bold text-gray-900 mt-1 leading-tight">{value}</p>
+          <p className="text-2xl font-bold text-gray-900 mt-1 leading-tight">{value}</p>
           <p className="text-xs text-gray-500 mt-1.5">{subtext}</p>
           {trend && (
             <p className={`text-xs font-medium mt-2 ${trendPositive ? 'text-green-600' : trendPositive === false ? 'text-red-600' : 'text-gray-500'}`}>
@@ -84,11 +84,11 @@ export default function Sales() {
   const paginatedCustomers = customers.slice((customerPage - 1) * ITEMS_PER_PAGE, customerPage * ITEMS_PER_PAGE)
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-[28px] font-bold text-gray-900">Sales & Orders</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Sales & Orders</h1>
           <p className="text-sm text-gray-500 mt-1">
             Manage customer orders for live catfish, oven-dried catfish, and vegetables.
           </p>
@@ -151,7 +151,7 @@ export default function Sales() {
       {/* Main Content Card */}
       <div className="bg-white rounded-2xl border border-gray-200 shadow-sm">
         {/* Card Header */}
-        <div className="p-5 border-b border-gray-100">
+        <div className="p-4 border-b border-gray-100">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
             <div>
               <h2 className="text-base font-semibold text-gray-900">Order Management</h2>
@@ -175,7 +175,7 @@ export default function Sales() {
         </div>
 
         {/* Tabs */}
-        <div className="px-5 border-b border-gray-100">
+        <div className="px-4 border-b border-gray-100">
           <nav className="flex gap-1">
             {tabs.map(tab => (
               <button
@@ -197,59 +197,59 @@ export default function Sales() {
         </div>
 
         {/* Tab Content */}
-        <div className="p-5">
+        <div className="p-4">
           {activeTab === 'orders' && (
             <div>
               <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-[#F9FAFB]">
-                    <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Order</th>
-                    <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Customer</th>
-                    <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Date</th>
-                    <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Products</th>
-                    <th className="text-right py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Amount (GH₵)</th>
-                    <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Status</th>
-                    <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Payment</th>
-                    <th className="text-right py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Actions</th>
+                    <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Order</th>
+                    <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Customer</th>
+                    <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Date</th>
+                    <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Products</th>
+                    <th className="text-right py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Amount (GH₵)</th>
+                    <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Status</th>
+                    <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Payment</th>
+                    <th className="text-right py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {paginatedOrders.map(order => (
-                    <tr key={order.id} className="border-b border-gray-100 hover:bg-green-50/30 transition-colors h-[68px]">
-                      <td className="py-3 px-4">
+                    <tr key={order.id} className="border-b border-gray-100 hover:bg-green-50/30 transition-colors">
+                      <td className="py-3 px-3">
                         <div>
                           <p className="font-semibold text-gray-900 hover:text-green-700 cursor-pointer">{order.id}</p>
                           <p className="text-xs text-gray-400">{order.items.length} item{order.items.length > 1 ? 's' : ''}</p>
                         </div>
                       </td>
-                      <td className="py-3 px-4">
+                      <td className="py-3 px-3">
                         <div>
                           <p className="font-medium text-gray-900">{order.customerName}</p>
                           <p className="text-xs text-gray-400">{customers.find(c => c.id === order.customerId)?.location}</p>
                         </div>
                       </td>
-                      <td className="py-3 px-4 text-gray-700">{order.orderDate}</td>
-                      <td className="py-3 px-4">
+                      <td className="py-3 px-3 text-gray-700">{order.orderDate}</td>
+                      <td className="py-3 px-3">
                         <div className="max-w-[180px]">
                           <p className="text-gray-700 truncate">{order.items.map(i => i.productName).join(', ')}</p>
                           <p className="text-xs text-gray-400">{order.items.reduce((sum, i) => sum + i.quantity, 0)} {order.items[0]?.unit} total</p>
                         </div>
                       </td>
-                      <td className="py-3 px-4 text-right">
+                      <td className="py-3 px-3 text-right">
                         <span className="font-bold text-gray-900">{order.totalAmount.toLocaleString()}</span>
                       </td>
-                      <td className="py-3 px-4">
+                      <td className="py-3 px-3">
                         <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium capitalize ${orderStatusStyles[order.status]}`}>
                           {order.status}
                         </span>
                       </td>
-                      <td className="py-3 px-4">
+                      <td className="py-3 px-3">
                         <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium capitalize ${paymentStatusStyles[order.paymentStatus]}`}>
                           {order.paymentStatus}
                         </span>
                       </td>
-                      <td className="py-3 px-4 text-right">
+                      <td className="py-3 px-3 text-right">
                         <div className="flex items-center justify-end gap-1">
                           <button className="px-2.5 py-1 text-xs font-medium text-green-700 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
                             View
@@ -274,18 +274,18 @@ export default function Sales() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-[#F9FAFB]">
-                    <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Customer</th>
-                    <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Contact</th>
-                    <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Location</th>
-                    <th className="text-right py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Orders</th>
-                    <th className="text-right py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Total Spent (GH₵)</th>
-                    <th className="text-right py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Actions</th>
+                    <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Customer</th>
+                    <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Contact</th>
+                    <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Location</th>
+                    <th className="text-right py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Orders</th>
+                    <th className="text-right py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Total Spent (GH₵)</th>
+                    <th className="text-right py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {paginatedCustomers.map(customer => (
-                    <tr key={customer.id} className="border-b border-gray-100 hover:bg-green-50/30 transition-colors h-[68px]">
-                      <td className="py-3 px-4">
+                    <tr key={customer.id} className="border-b border-gray-100 hover:bg-green-50/30 transition-colors">
+                      <td className="py-3 px-3">
                         <div className="flex items-center gap-3">
                           <div className="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center shrink-0">
                             <span className="text-xs font-bold text-green-700">
@@ -298,16 +298,16 @@ export default function Sales() {
                           </div>
                         </div>
                       </td>
-                      <td className="py-3 px-4">
+                      <td className="py-3 px-3">
                         <div>
                           <p className="text-gray-700">{customer.phone}</p>
                           {customer.email && <p className="text-xs text-gray-400">{customer.email}</p>}
                         </div>
                       </td>
-                      <td className="py-3 px-4 text-gray-700">{customer.location}</td>
-                      <td className="py-3 px-4 text-right font-medium text-gray-900">{customer.totalOrders}</td>
-                      <td className="py-3 px-4 text-right font-bold text-gray-900">{customer.totalSpent.toLocaleString()}</td>
-                      <td className="py-3 px-4 text-right">
+                      <td className="py-3 px-3 text-gray-700">{customer.location}</td>
+                      <td className="py-3 px-3 text-right font-medium text-gray-900">{customer.totalOrders}</td>
+                      <td className="py-3 px-3 text-right font-bold text-gray-900">{customer.totalSpent.toLocaleString()}</td>
+                      <td className="py-3 px-3 text-right">
                         <div className="flex items-center justify-end gap-1">
                           <button className="px-2.5 py-1 text-xs font-medium text-green-700 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
                             View

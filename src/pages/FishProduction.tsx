@@ -72,11 +72,11 @@ export default function FishProduction() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-[28px] font-bold text-gray-900">Fish Production</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Fish Production</h1>
           <p className="text-sm text-gray-500 mt-1">
             Track fish stock, pond performance, feeding activity, mortality and harvest readiness.
           </p>
@@ -110,7 +110,7 @@ export default function FishProduction() {
 
       {/* Main Content Card */}
       <div className="bg-white rounded-2xl border border-gray-200">
-        <div className="p-5 border-b border-gray-100">
+        <div className="p-4 border-b border-gray-100">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
             <div>
               <h2 className="text-base font-semibold text-gray-900">Production Overview</h2>
@@ -129,7 +129,7 @@ export default function FishProduction() {
           </div>
         </div>
 
-        <div className="px-5 border-b border-gray-100">
+        <div className="px-4 border-b border-gray-100">
           <nav className="flex gap-1">
             {tabs.map(tab => (
               <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={`px-4 py-3 text-sm font-medium rounded-t-lg transition-colors relative ${activeTab === tab.id ? 'text-green-700 bg-green-50/50' : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'}`}>
@@ -140,7 +140,7 @@ export default function FishProduction() {
           </nav>
         </div>
 
-        <div className="p-5">
+        <div className="p-4">
           {activeTab === 'batches' && <BatchTable onViewBatch={(id) => openModal('view', id)} onAction={handleBatchAction} />}
           {activeTab === 'ponds' && <PondsGrid />}
           {activeTab === 'feeding' && <FeedingRecordsTab />}

@@ -21,11 +21,11 @@ const colorMap = {
 export default function GreenhouseKpiCard({ title, value, subtext, trend, trendPositive, icon: Icon, color }: GreenhouseKpiCardProps) {
   const colors = colorMap[color]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-2xl border border-gray-200 p-4 shadow-sm hover:shadow-md transition-shadow">
       <div className="flex items-start justify-between">
         <div className="flex-1">
           <p className="text-sm text-gray-500 font-medium">{title}</p>
-          <p className="text-[28px] font-bold text-gray-900 mt-1 leading-tight">{value}</p>
+          <p className="text-2xl font-bold text-gray-900 mt-1 leading-tight">{value}</p>
           <p className="text-xs text-gray-500 mt-1.5">{subtext}</p>
           {trend && (
             <p className={`text-xs font-medium mt-2 ${trendPositive ? 'text-green-600' : trendPositive === false ? 'text-red-600' : 'text-gray-500'}`}>

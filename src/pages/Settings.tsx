@@ -2,7 +2,7 @@ import { FloppyDiskIcon, UserIcon, Building01Icon, Notification03Icon, Shield01I
 
 export default function Settings() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Settings</h1>
         <p className="text-sm text-gray-500 mt-1">Manage farm profile and system preferences</p>
@@ -11,7 +11,7 @@ export default function Settings() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Farm Profile */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="bg-white rounded-xl border border-gray-200 p-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-5">
             <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
               <Building01Icon className="w-4 h-4" />
               Farm Profile
@@ -52,7 +52,7 @@ export default function Settings() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl border border-gray-200 p-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-5">
             <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
               <Notification03Icon className="w-4 h-4" />
               Notification Preferences
@@ -81,7 +81,7 @@ export default function Settings() {
 
         {/* Sidebar */}
         <div className="space-y-6">
-          <div className="bg-white rounded-xl border border-gray-200 p-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-5">
             <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
               <UserIcon className="w-4 h-4" />
               Account
@@ -107,7 +107,7 @@ export default function Settings() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl border border-gray-200 p-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-5">
             <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
               <Shield01Icon className="w-4 h-4" />
               System Info

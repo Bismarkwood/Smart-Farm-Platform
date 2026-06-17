@@ -46,11 +46,11 @@ function KpiCard({ title, value, subtext, trend, trendPositive, icon: Icon, colo
 }) {
   const colors = colorMap[color]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-2xl border border-gray-200 p-4 shadow-sm hover:shadow-md transition-shadow">
       <div className="flex items-start justify-between">
         <div className="flex-1">
           <p className="text-sm text-gray-500 font-medium">{title}</p>
-          <p className="text-[28px] font-bold text-gray-900 mt-1 leading-tight">{value}</p>
+          <p className="text-2xl font-bold text-gray-900 mt-1 leading-tight">{value}</p>
           <p className="text-xs text-gray-500 mt-1.5">{subtext}</p>
           {trend && (
             <p className={`text-xs font-medium mt-2 ${trendPositive ? 'text-green-600' : trendPositive === false ? 'text-red-600' : 'text-gray-500'}`}>
@@ -84,11 +84,11 @@ export default function Inventory() {
   const criticalCount = inventoryItems.filter(i => i.status === 'critical').length
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-[28px] font-bold text-gray-900">Inventory Management</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Inventory Management</h1>
           <p className="text-sm text-gray-500 mt-1">
             Monitor fish feed, packaging materials, processed stock, vegetables and farm inputs.
           </p>
@@ -151,7 +151,7 @@ export default function Inventory() {
       {/* Main Content Card */}
       <div className="bg-white rounded-2xl border border-gray-200 shadow-sm">
         {/* Card Header */}
-        <div className="p-5 border-b border-gray-100">
+        <div className="p-4 border-b border-gray-100">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
             <div>
               <h2 className="text-base font-semibold text-gray-900">Stock Overview</h2>
@@ -175,7 +175,7 @@ export default function Inventory() {
         </div>
 
         {/* Category Filter */}
-        <div className="px-5 py-3 border-b border-gray-100">
+        <div className="px-4 py-3 border-b border-gray-100">
           <div className="flex flex-wrap gap-2">
             {(['all', 'fish-feed', 'packaging', 'processed-fish', 'vegetables', 'farm-inputs'] as const).map(cat => (
               <button
@@ -194,18 +194,18 @@ export default function Inventory() {
         </div>
 
         {/* Table */}
-        <div className="p-5 overflow-x-auto">
+        <div className="p-4 overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-[#F9FAFB]">
-                <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Item</th>
-                <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Category</th>
-                <th className="text-right py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Current Stock</th>
-                <th className="text-right py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Min Level</th>
-                <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Stock Health</th>
-                <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Last Restocked</th>
-                <th className="text-left py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Status</th>
-                <th className="text-right py-3.5 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Actions</th>
+                <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Item</th>
+                <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Category</th>
+                <th className="text-right py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Current Stock</th>
+                <th className="text-right py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Min Level</th>
+                <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Stock Health</th>
+                <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Last Restocked</th>
+                <th className="text-left py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Status</th>
+                <th className="text-right py-3.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -214,23 +214,23 @@ export default function Inventory() {
                 const stockBarColor = stockPercent >= 100 ? 'bg-green-500' : stockPercent >= 70 ? 'bg-amber-500' : 'bg-red-500'
 
                 return (
-                  <tr key={item.id} className="border-b border-gray-100 hover:bg-green-50/30 transition-colors h-[68px]">
-                    <td className="py-3 px-4">
+                  <tr key={item.id} className="border-b border-gray-100 hover:bg-green-50/30 transition-colors">
+                    <td className="py-3 px-3">
                       <div>
                         <p className="font-semibold text-gray-900">{item.name}</p>
                         <p className="text-xs text-gray-400">ID: {item.id}</p>
                       </div>
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-3 px-3">
                       <span className="text-gray-700">{categoryLabel(item.category)}</span>
                     </td>
-                    <td className="py-3 px-4 text-right">
+                    <td className="py-3 px-3 text-right">
                       <span className="font-bold text-gray-900">{item.currentStock} {item.unit}</span>
                     </td>
-                    <td className="py-3 px-4 text-right">
+                    <td className="py-3 px-3 text-right">
                       <span className="text-gray-500">{item.minStockLevel} {item.unit}</span>
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-3 px-3">
                       <div className="flex items-center gap-2 min-w-[100px]">
                         <div className="w-16 h-1.5 bg-gray-100 rounded-full overflow-hidden">
                           <div
@@ -241,13 +241,13 @@ export default function Inventory() {
                         <span className="text-xs text-gray-500">{Math.min(stockPercent, 999).toFixed(0)}%</span>
                       </div>
                     </td>
-                    <td className="py-3 px-4 text-gray-700">{item.lastRestocked}</td>
-                    <td className="py-3 px-4">
+                    <td className="py-3 px-3 text-gray-700">{item.lastRestocked}</td>
+                    <td className="py-3 px-3">
                       <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium capitalize ${statusStyles[item.status] || 'bg-gray-100 text-gray-700'}`}>
                         {item.status}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-right">
+                    <td className="py-3 px-3 text-right">
                       <div className="flex items-center justify-end gap-1">
                         <button className="px-2.5 py-1 text-xs font-medium text-green-700 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
                           Restock
