@@ -9,6 +9,14 @@ export default {
             fontFamily: {
                 sans: ['Manrope', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
             },
+            boxShadow: {
+                sm: 'none',
+                DEFAULT: 'none',
+                md: 'none',
+                lg: 'none',
+                xl: 'none',
+                '2xl': 'none',
+            },
             colors: {
                 primary: {
                     50: '#f0fdf4',

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Plant01Icon, Cancel01Icon } from 'hugeicons-react'
 import { greenhouses } from '../../data/mockData'
 
@@ -31,7 +32,7 @@ export default function NewCropBatchModal({ isOpen, onClose }: NewCropBatchModal
     onClose()
   }
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" onClick={onClose} />
       <div className="relative w-full max-w-lg bg-white rounded-2xl border border-gray-200 flex flex-col max-h-[90vh] animate-modal-in">
@@ -133,6 +134,7 @@ export default function NewCropBatchModal({ isOpen, onClose }: NewCropBatchModal
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }

@@ -1,3 +1,4 @@
+import { createPortal } from 'react-dom'
 import { Cancel01Icon } from 'hugeicons-react'
 import { type ComponentType } from 'react'
 
@@ -22,7 +23,7 @@ const sizeMap = {
 export default function Modal({ isOpen, onClose, title, subtitle, icon: Icon, iconBg = 'bg-green-50', children, footer, size = 'lg' }: ModalProps) {
   if (!isOpen) return null
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4">
       {/* Backdrop */}
       <div
@@ -31,7 +32,7 @@ export default function Modal({ isOpen, onClose, title, subtitle, icon: Icon, ic
       />
 
       {/* Modal */}
-      <div className={`relative w-full ${sizeMap[size]} bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col max-h-[90vh] animate-modal-in`}>
+      <div className={`relative w-full ${sizeMap[size]} bg-white rounded-2xl border border-gray-200 flex flex-col max-h-[90vh] animate-modal-in`}>
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 shrink-0">
           <div className="flex items-center gap-3">
@@ -65,6 +66,7 @@ export default function Modal({ isOpen, onClose, title, subtitle, icon: Icon, ic
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }

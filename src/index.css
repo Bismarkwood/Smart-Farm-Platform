@@ -10,14 +10,6 @@ body {
   background-color: #f8fafc;
 }
 
-/* Remove all box shadows globally */
-*,
-*::before,
-*::after {
-  --tw-shadow: 0 0 #0000 !important;
-  --tw-shadow-colored: 0 0 #0000 !important;
-}
-
 @keyframes slide-in-right {
   from {
     transform: translateX(100%);
