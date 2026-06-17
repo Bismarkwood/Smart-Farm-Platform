@@ -16,7 +16,7 @@ import PondsGrid from '../components/FishProduction/PondsGrid'
 import FeedingRecordsTab from '../components/FishProduction/FeedingRecordsTab'
 import HealthLogsTab from '../components/FishProduction/HealthLogsTab'
 import NewBatchModal from '../components/FishProduction/NewBatchModal'
-import BatchDetailModal from '../components/FishProduction/BatchDetailModal'
+import BatchDetailDrawer from '../components/FishProduction/BatchDetailDrawer'
 import UpdateStockModal from '../components/FishProduction/UpdateStockModal'
 import RecordMortalityModal from '../components/FishProduction/RecordMortalityModal'
 import AddFeedingModal from '../components/FishProduction/AddFeedingModal'
@@ -150,7 +150,7 @@ export default function FishProduction() {
 
       {/* Modals */}
       <NewBatchModal isOpen={activeModal === 'new-batch'} onClose={closeModal} />
-      <BatchDetailModal isOpen={activeModal === 'view'} onClose={closeModal} batchId={selectedBatchId} />
+      <BatchDetailDrawer isOpen={activeModal === 'view'} onClose={closeModal} batchId={selectedBatchId} />
       <UpdateStockModal isOpen={activeModal === 'update'} onClose={closeModal} batchId={selectedBatchId} />
       <RecordMortalityModal isOpen={activeModal === 'mortality'} onClose={closeModal} batchId={selectedBatchId} />
       <AddFeedingModal isOpen={activeModal === 'feed'} onClose={closeModal} batchId={selectedBatchId} />
